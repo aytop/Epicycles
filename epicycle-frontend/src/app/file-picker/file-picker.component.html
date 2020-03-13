@@ -1,0 +1,38 @@
+<form #filePicker="ngForm" (ngSubmit)="onSubmit(filePicker.value)">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-auto">
+      <img [src]="this.imageSource" *ngIf="this.showImage" />
+    </div>
+    <div class="col"></div>
+    <div class="w-100"></div>
+    <div class="col">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupFileAddon01">Choose image</span>
+        </div>
+        <div class="custom-file">
+          <input
+            class="custom-file-input"
+            type="file"
+            accept="image/*"
+            name="file"
+            ngModel
+            (change)="onChange($event)"
+          />
+          <label class="custom-file-label" for="inputGroupFile01">{{ this.fileLabel }}</label>
+        </div>
+      </div>
+    </div>
+    <div class="w-100"></div>
+    <div class="col">
+      <label>Number of circles</label>
+      <input class="form-control my-2" type="number" name="order" [(ngModel)]="this.order" />
+    </div>
+    <div class="w-100"></div>
+    <div class="col">
+      <input class="btn btn-outline-primary my-2" type="submit" [disabled]="filePicker.pristine" />
+    </div>
+    <div class="w-100"></div>
+  </div>
+</form>

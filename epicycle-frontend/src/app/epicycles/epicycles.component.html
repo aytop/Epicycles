@@ -1,0 +1,19 @@
+<app-canvas
+  *ngIf="this.shouldDraw"
+  [epicycles]="this.epicycles"
+  [scaleFactor]="this.scale"
+  [baseAngularVelocity]="this.angularVelocity"
+></app-canvas>
+<div class="row" *ngIf="this.shouldDraw">
+  <div class="col-auto">
+    <button class="btn btn-outline-primary" (click)="this.onZoom(-10)">-</button>
+    <span> Zoom </span>
+    <button class="btn btn-outline-primary" (click)="this.onZoom(10)">+</button>
+  </div>
+  <div class="col">
+    <button class="btn btn-outline-primary" (click)="this.onSpeedup(-0.001)">-</button>
+    <span> Speed </span>
+    <button class="btn btn-outline-primary" (click)="this.onSpeedup(0.001)">+</button>
+  </div>
+</div>
+<div class="w-100"></div>
