@@ -5,8 +5,8 @@ Angular + Spring Boot implementation of Epicycles from [Mathologers video](https
 Java 11
 Maven
 ### Frontend
-NodeJs
-Angular 8
+- NodeJs
+- Angular 8
 # Starting 
 ### Backend
 `mvn spring-boot:run`
